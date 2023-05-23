@@ -29,6 +29,11 @@ header {
     margin-right: 10px;
 }
 
+.new-game-button:hover {
+    background-color: #cfbf9b;
+    transition: all 0.15s;
+}
+
 .randomize-button {
     font-weight: 300;
     font-size: 18px;
@@ -38,4 +43,9 @@ header {
     padding-left: 40px;
     padding-right: 40px;
     margin-right: 20px;
+}
+
+.randomize-button:hover {
+    background-color: #C24428;
+    transition: all 0.15s;
 }

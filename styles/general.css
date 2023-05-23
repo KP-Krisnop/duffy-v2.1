@@ -1,6 +1,9 @@
 html {
     width: 100vw;
     height: 5000px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 body {
@@ -8,7 +11,7 @@ body {
     background-color: #F9EED7;
     font-family: 'Outfit', sans-serif;
     font-weight: 700;
-    margin: auto;
+    overflow-x: hidden;
 }
 
 h1 {

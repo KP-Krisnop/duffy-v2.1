@@ -9,7 +9,7 @@
     background-color: #B88319;
     height: 50px;
     display: flex;
-    /* gap: 60px; */
+    gap: 12px;
     border-radius: 25px;
     justify-content: space-around;
 }
@@ -23,6 +23,8 @@ input {
     margin-right: 30px;
     text-align: center;
     outline: none;
+    text-transform: uppercase;
+    caret-color: #DBC9A2;
 }
 
 input::placeholder {
@@ -30,13 +32,6 @@ input::placeholder {
     font-size: 14px;
     font-weight: 300;
 }
-
-input:focus {
-    border-color: lightgreen;
-    border-width: 2px;
-}
-
-/* SCORE BOX */
 
 .score-box {
     flex: 1;
