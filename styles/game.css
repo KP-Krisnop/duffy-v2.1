@@ -9,23 +9,31 @@
     background-color: #B88319;
     height: 50px;
     display: flex;
-    gap: 104px;
+    /* gap: 60px; */
     border-radius: 25px;
+    justify-content: space-around;
 }
 
 input {
+    font-size: 16px;
+    font-weight: 700;
     background-color: transparent;
     border: none;
     margin-left: 30px;
     margin-right: 30px;
+    text-align: center;
+    outline: none;
 }
 
 input::placeholder {
     color: #CBA961;
+    font-size: 14px;
+    font-weight: 300;
 }
 
 input:focus {
-    border: none;
+    border-color: lightgreen;
+    border-width: 2px;
 }
 
 /* SCORE BOX */
@@ -50,6 +58,8 @@ input:focus {
     margin: 0;
     width: 152px;
     height: 100%;
+    font-size: 50px;
+    transform: translateY(20px);
 }
 
 .score-box>div div {
@@ -62,6 +72,7 @@ input:focus {
 .score-box h1:first-child {
     position: absolute;
     font-size: 20px;
+    font-weight: 300;
     margin: 0;
     top: 16px;
     left: 60px;
@@ -70,6 +81,7 @@ input:focus {
 .score-box h1:nth-child(2) {
     position: absolute;
     font-size: 20px;
+    font-weight: 300;
     margin: 0;
     top: 16px;
     right: 60px;
