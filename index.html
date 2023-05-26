@@ -18,9 +18,19 @@
     <header>
         <p class="name">Duffy</p>
         <div class="header-button">
-            <button class="new-game-button">New Game</button>
+            <button data-modal-target="#new-game-modal" class="new-game-button">New Game</button>
             <button class="randomize-button">Randomize Player</button>
         </div>
+        <div class="new-game-modal" id="new-game-modal">
+            <div>
+                <h1>New Game?</h1>
+            </div>
+            <div>
+                <button>Start</button>
+                <button data-cancel-button>Cancel</button>
+            </div>
+        </div>
+        <div id="overlay"></div>
     </header>
     <h1>Stats</h1>
     <div class="stats-box">
@@ -108,6 +118,9 @@
             </div>
         </div>
     </div>
+
+    <script src="scripts/header.js"></script>
+    <script src="scripts/modal-test.js"></script>
 </body>
 
 </html>

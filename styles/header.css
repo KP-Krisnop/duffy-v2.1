@@ -27,11 +27,15 @@ header {
     padding-left: 30px;
     padding-right: 30px;
     margin-right: 10px;
+    transition: all 0.15s;
 }
 
 .new-game-button:hover {
     background-color: #cfbf9b;
-    transition: all 0.15s;
+}
+
+.new-game-button:active {
+    background-color: #C24428;
 }
 
 .randomize-button {
@@ -46,6 +50,88 @@ header {
 }
 
 .randomize-button:hover {
-    background-color: #C24428;
+    background-color: #9c711b;
     transition: all 0.15s;
+}
+
+.randomize-button:active {
+    background-color: #C24428;
+}
+
+/* MODAL */
+
+.new-game-modal {
+    position: fixed;
+    z-index: 151;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    padding: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color: #F9EED7;
+}
+
+.new-game-modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.new-game-modal h1 {
+    margin: 0;
+    margin-bottom: 80px;
+}
+
+.new-game-modal button {
+    height: 50px;
+    width: 150px;
+    background-color: #cfbf9b;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+    font-weight: 700;
+    font-size: 20px;
+    transition: all 0.15s;
+}
+
+.new-game-modal button:first-child {
+    height: 50px;
+    width: 150px;
+    background-color: #B88319;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+    font-weight: 700;
+    font-size: 20px;
+    transition: all 0.15s;
+}
+
+.new-game-modal button:hover {
+    background-color: #C24428;
+}
+
+.new-game-modal button:hover:first-child {
+    background-color: #795610;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    transition: all 1s;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    z-index: 150;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
 }
