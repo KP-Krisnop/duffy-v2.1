@@ -12,6 +12,11 @@
     gap: 12px;
     border-radius: 25px;
     justify-content: space-around;
+    transition: all 0.15s;
+}
+
+.name-box.randomized {
+    background-color: #C24428;
 }
 
 input {

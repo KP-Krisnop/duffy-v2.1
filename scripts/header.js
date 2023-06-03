@@ -11,7 +11,7 @@ openModalBtn.forEach((button) => {
 
 cancelNewGameModalBtn.forEach((button) => {
   button.addEventListener('click', () => {
-    const modal = document.querySelector('.new-game-modal');
+    const modal = document.querySelector(button.dataset.modalTarget);
     closeNewGameModal(modal);
   });
 });
