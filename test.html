@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        html {
+            height: 100vh
+        }
+
+        .new-game-modal {
+            display: none;
+        }
+
+        .new-game-modal[open] {
+            display: flex;
+            justify-content: center;
+            width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <p class="name">Duffy</p>
+        <div class="header-button">
+            <button class="new-game-button" id="open-new-game-modal">New Game</button>
+            <button class="randomize-button">Randomize Player</button>
+        </div>
+        <dialog class="new-game-modal" id="new-game-modal">
+            <div>
+                <h1>New Game?</h1>
+            </div>
+            <div>
+                <button>Start</button>
+                <button id="close-new-game-modal">Cancel</button>
+            </div>
+        </dialog>
+    </header>
+    <script>
+        const openModalButton = document.querySelector('#open-new-game-modal');
+        const closeModalButton = document.querySelector('#close-new-game-modal');
+        const newGameModal = document.querySelector('#new-game-modal');
+
+        openModalButton.addEventListener('click', () => {
+            newGameModal.showModal();
+        });
+
+        closeModalButton.addEventListener('click', () => {
+            newGameModal.close();
+        })
+    </script>
+</body>
+
+</html>

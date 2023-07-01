@@ -6,9 +6,7 @@ const nameBox = document.querySelector('.name-box');
 
 randomizerBtn.addEventListener('click', () => {
   //   console.log('clicked');
-  getInput();
-  randomizePlayer(nameSet);
-  setInputValue();
+  nameSet = [];
 
   const hasEmptyString = nameSet.some(function (element) {
     return element === '';
@@ -16,15 +14,23 @@ randomizerBtn.addEventListener('click', () => {
 
   if (hasEmptyString) {
     nameSet = [];
-  }
-
-  console.log(nameSet);
-
-  if (nameSet.length) {
-    nameBox.classList.add('randomized');
+    nameBox.classList.add('unsign');
     setTimeout(() => {
-      nameBox.classList.remove('randomized');
+      nameBox.classList.remove('unsign');
     }, 200);
+  } else {
+    getInput();
+    randomizePlayer(nameSet);
+    setInputValue();
+
+    console.log(nameSet);
+
+    if (nameSet.length) {
+      nameBox.classList.add('randomized');
+      setTimeout(() => {
+        nameBox.classList.remove('randomized');
+      }, 200);
+    }
   }
 });
 
@@ -50,7 +56,7 @@ function randomizePlayer(array) {
 function setInputValue() {
   for (let i = 0; i < nameSet.length; i++) {
     const name = nameSet[i];
-    const input = document.querySelector(ids[i]);
-    input.value = name;
+    const output = document.querySelector(ids[i]);
+    output.value = name;
   }
 }

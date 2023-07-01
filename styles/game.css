@@ -16,6 +16,10 @@
 }
 
 .name-box.randomized {
+    background-color: #dfa93d;
+}
+
+.name-box.unsign {
     background-color: #C24428;
 }
 

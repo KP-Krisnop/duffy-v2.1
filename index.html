@@ -18,19 +18,18 @@
     <header>
         <p class="name">Duffy</p>
         <div class="header-button">
-            <button data-modal-target="#new-game-modal" class="new-game-button">New Game</button>
+            <button class="new-game-button" id="open-new-game-modal">New Game</button>
             <button class="randomize-button">Randomize Player</button>
         </div>
-        <div class="new-game-modal" id="new-game-modal">
+        <dialog class="new-game-modal" id="new-game-modal">
             <div>
                 <h1>New Game?</h1>
             </div>
             <div>
                 <button>Start</button>
-                <button data-cancel-button>!Start</button>
+                <button id="close-new-game-modal">Cancel</button>
             </div>
-        </div>
-        <div id="overlay"></div>
+        </dialog>
     </header>
     <h1>Stats</h1>
     <div class="stats-box">
