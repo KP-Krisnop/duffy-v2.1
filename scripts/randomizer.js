@@ -1,37 +1,53 @@
 const ids = ['#name-1', '#name-2', '#name-3', '#name-4'];
 let nameSet = [];
-let nameSetObj = {};
 
 const randomizerBtn = document.querySelector('.randomize-button');
 const nameBox = document.querySelector('.name-box');
 
 randomizerBtn.addEventListener('click', () => {
   nameSet = [];
-  getInput();
-  console.log(getInput());
+  getInput(nameSet);
 
-  const hasEmptyString = nameSet.some(function (element) {
-    return element == '';
-  });
+  console.log('clicked');
 
-  if (hasEmptyString) {
-    nameSet = [];
+  if (forAllMT(nameSet)) {
+    console.log('all empty');
+
+    if (localStorage.getItem('playerSet') === null) {
+      console.log('no playerSet');
+
+      if (forSomeMT(nameSet)) {
+        flashClass('unsign');
+      } else {
+        randomizePlayer(nameSet);
+        setInputValue(nameSet);
+        flashClass('randomized');
+        console.log(nameSet);
+      }
+    } else if (localStorage.getItem('playerSet') !== null) {
+      console.log('has playerSet');
+
+      nameSet = JSON.parse(localStorage.getItem('playerSet'));
+      randomizePlayer(nameSet);
+      setInputValue(nameSet);
+      flashClass('randomized');
+    }
+  } else if (forSomeMT(nameSet)) {
     flashClass('unsign');
   } else {
     randomizePlayer(nameSet);
-    setInputValue();
+    setInputValue(nameSet);
     flashClass('randomized');
     console.log(nameSet);
   }
 });
 
-function getInput() {
+function getInput(array) {
   ids.forEach((id) => {
     const input = document.querySelector(id);
-    nameSet.push(input.value);
-    nameSet.sort();
-    input.value = '';
+    array.push(input.value);
   });
+  console.log(array);
 }
 
 function randomizePlayer(array) {
@@ -39,16 +55,17 @@ function randomizePlayer(array) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
   }
-
   return array;
 }
 
-function setInputValue() {
-  for (let i = 0; i < nameSet.length; i++) {
-    const name = nameSet[i];
+function setInputValue(array) {
+  for (let i = 0; i < array.length; i++) {
+    const name = array[i];
     const output = document.querySelector(ids[i]);
     output.value = name;
   }
+  array = array.sort();
+  localStorage.setItem('playerSet', JSON.stringify(array));
 }
 
 function flashClass(text) {
@@ -58,25 +75,28 @@ function flashClass(text) {
   }, 200);
 }
 
-// function getInput() {
-//   if (localStorage.getItem('nameSetLS') == null) {
-//     console.log('no LS');
+function mTString(array) {
+  array.some(function (element) {
+    return element == '';
+  });
+}
 
-//     ids.forEach((id) => {
-//       const input = document.querySelector(id);
-//       nameSet.push(input.value);
-//       console.log('sorted', nameSet.sort());
+function forSomeMT(array) {
+  let status = false;
+  array.some(function (element) {
+    if (element === '') {
+      status = true;
+    }
+  });
+  return status;
+}
 
-//       nameSetObj = nameSet.reduce(function (result, value, index) {
-//         result['player' + (index + 1)] = value;
-//         return result;
-//       }, {});
-
-//       localStorage.setItem('nameSetLS', JSON.stringify(nameSetObj));
-//     });
-//   } else {
-//     console.log('has LS');
-
-//     nameSet = Object.values(JSON.parse(localStorage.getItem('nameSetLS')));
-//   }
-// }
+function forAllMT(array) {
+  let status = false;
+  array.every((element) => {
+    if (element == '') {
+      status = true;
+    }
+  });
+  return status;
+}

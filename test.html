@@ -9,21 +9,21 @@
 
 <body>
     <script>
-        const nameSet = {
-            player1: 'kp',
-            player2: 'mare',
-            player3: 'pore',
-            player4: 'kk'
-        };
+        const nameSet = ['kp', 'mare', 'pore', 'kk'];
 
-        const nameSetAr = ['a', 'ab', 'abc', 'abcd'];
+        console.log(mTString(nameSet));
 
-        const nameSetObj = nameSetAr.reduce(function (result, value, index) {
-            result['player' + (index + 1)] = value;
-            return result
-        }, {});
+        // localStorage.setItem('arr', JSON.stringify(nameSet));
 
-        console.log(nameSetObj);
+        function mTString(array) {
+            let status = false;
+            array.some(function (element) {
+                if (element === '') {
+                    status = true;
+                }
+            });
+            return status;
+        }
     </script>
 </body>
 
