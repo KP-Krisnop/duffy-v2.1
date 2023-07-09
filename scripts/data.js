@@ -14,7 +14,35 @@ const createDR = (rank) => ({
   },
 });
 
-let dR1 = createDR(1);
-let dR2 = createDR(2);
-let dR3 = createDR(3);
-let dR4 = createDR(4);
+const dR1 = createDR(1);
+const dR2 = createDR(2);
+const dR3 = createDR(3);
+const dR4 = createDR(4);
+
+let p1 = {
+  name: '',
+  score: undefined,
+  bookingStreek: undefined,
+  addedScore: undefined,
+};
+
+let p2 = {
+  name: '',
+  score: undefined,
+  bookingStreek: undefined,
+  addedScore: undefined,
+};
+
+let p3 = {
+  name: '',
+  score: undefined,
+  bookingStreek: undefined,
+  addedScore: undefined,
+};
+
+let p4 = {
+  name: '',
+  score: undefined,
+  bookingStreek: undefined,
+  addedScore: undefined,
+};

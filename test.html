@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <style>
+    <!-- <style>
         .color-transition {
             width: 200px;
             height: 200px;
@@ -30,28 +30,17 @@
         .color-transition:hover::after {
             transform: translateY(0);
         }
-    </style>
+    </style> -->
 </head>
 
 <body>
-    <div class="color-transition"></div>
+    <div class="div">1</div>
 
     <script>
-        const nameSet = ['kp', 'mare', 'pore', 'kk'];
+        const div = document.querySelector('.div');
+        let num = 1;
 
-        console.log(mTString(nameSet));
-
-        // localStorage.setItem('arr', JSON.stringify(nameSet));
-
-        function mTString(array) {
-            let status = false;
-            array.some(function (element) {
-                if (element === '') {
-                    status = true;
-                }
-            });
-            return status;
-        }
+        div.innerText = num;
     </script>
 </body>
 

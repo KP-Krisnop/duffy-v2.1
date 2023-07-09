@@ -296,6 +296,6 @@
     margin: 0;
 }
 
-.round-container span {
+.round-container .th {
     font-size: 30px;
 }

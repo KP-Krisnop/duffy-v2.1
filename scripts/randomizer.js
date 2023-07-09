@@ -1,44 +1,59 @@
 const ids = ['#name-1', '#name-2', '#name-3', '#name-4'];
 let nameSet = [];
+let currentNames = [];
+let randomizedCount = 0;
 
 const randomizerBtn = document.querySelector('.randomize-button');
 const nameBox = document.querySelector('.name-box');
 
 randomizerBtn.addEventListener('click', () => {
-  nameSet = [];
-  getInput(nameSet);
+  if (gameState && randomizedCount !== 0) {
+    randomizerBtn.disabled = true;
+  } else {
+    nameSet = [];
+    getInput(nameSet);
 
-  console.log('clicked');
+    // console.log('clicked');
 
-  if (forAllMT(nameSet)) {
-    console.log('all empty');
+    if (forAllMT(nameSet)) {
+      // console.log('all empty');
 
-    if (localStorage.getItem('playerSet') === null) {
-      console.log('no playerSet');
+      if (localStorage.getItem('playerSet') === null) {
+        // console.log('no playerSet');
 
-      if (forSomeMT(nameSet)) {
-        flashClass('unsign');
-      } else {
+        if (forSomeMT(nameSet)) {
+          flashClass('unsign');
+        } else {
+          randomizePlayer(nameSet);
+          setInputValue(nameSet);
+          flashClass('randomized');
+          // console.log(nameSet);
+        }
+      } else if (localStorage.getItem('playerSet') !== null) {
+        // console.log('has playerSet');
+
+        nameSet = JSON.parse(localStorage.getItem('playerSet'));
         randomizePlayer(nameSet);
         setInputValue(nameSet);
         flashClass('randomized');
-        console.log(nameSet);
       }
-    } else if (localStorage.getItem('playerSet') !== null) {
-      console.log('has playerSet');
-
-      nameSet = JSON.parse(localStorage.getItem('playerSet'));
+    } else if (forSomeMT(nameSet)) {
+      flashClass('unsign');
+    } else {
       randomizePlayer(nameSet);
       setInputValue(nameSet);
       flashClass('randomized');
+      // console.log(nameSet);
     }
-  } else if (forSomeMT(nameSet)) {
-    flashClass('unsign');
-  } else {
-    randomizePlayer(nameSet);
-    setInputValue(nameSet);
-    flashClass('randomized');
-    console.log(nameSet);
+
+    const players = [p1, p2, p3, p4];
+
+    players.forEach((player, index) => {
+      player.name = currentNames[index + 1];
+    });
+
+    randomizedCount++;
+    console.log(randomizedCount);
   }
 });
 
@@ -47,7 +62,7 @@ function getInput(array) {
     const input = document.querySelector(id);
     array.push(input.value);
   });
-  console.log(array);
+  // console.log(array);
 }
 
 function randomizePlayer(array) {
@@ -64,6 +79,8 @@ function setInputValue(array) {
     const output = document.querySelector(ids[i]);
     output.value = name;
   }
+
+  currentNames = array;
   array = array.sort();
   localStorage.setItem('playerSet', JSON.stringify(array));
 }
