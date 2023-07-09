@@ -8,6 +8,7 @@ const game = {
     startGameButton.innerText = 'End';
     askMessage.innerText = 'End Game?';
     console.log('STARTED');
+    lockInput();
 
     const dR = [dR1, dR2, dR3, dR4];
     const properties = ['name', 'score', 'bookingStreek', 'addedScore'];
@@ -25,5 +26,6 @@ const game = {
     askMessage.innerText = 'New Game?';
     console.log('ENDED');
     randomizerBtn.disabled = false;
+    unlockInput();
   },
 };

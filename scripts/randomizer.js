@@ -66,10 +66,22 @@ function getInput(array) {
 }
 
 function randomizePlayer(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
+  const dir = Math.random() > 0.5;
+  const shiftValue = Math.floor(Math.random() * 4);
+
+  // console.log(dir);
+  // console.log(shiftValue);
+
+  if (dir) {
+    array = array.slice().reverse();
+    // console.log('reversed');
   }
+
+  for (let i = 0; i < shiftValue; i++) {
+    const firstValue = array.shift();
+    array.push(firstValue);
+  }
+
   return array;
 }
 
@@ -81,7 +93,6 @@ function setInputValue(array) {
   }
 
   currentNames = array;
-  array = array.sort();
   localStorage.setItem('playerSet', JSON.stringify(array));
 }
 
@@ -116,4 +127,18 @@ function forAllMT(array) {
     }
   });
   return status;
+}
+
+function lockInput() {
+  ids.forEach((id) => {
+    const input = document.querySelector(id);
+    input.disabled = true;
+  });
+}
+
+function unlockInput() {
+  ids.forEach((id) => {
+    const input = document.querySelector(id);
+    input.disabled = false;
+  });
 }

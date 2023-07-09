@@ -42,6 +42,10 @@ input::placeholder {
     font-weight: 300;
 }
 
+input:disabled {
+    color: black
+}
+
 .score-box {
     flex: 1;
     display: flex;

@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <!-- <style>
-        .color-transition {
+    <style>
+        html {
+            background-color: antiquewhite;
+        }
+
+        /* .color-transition {
             width: 200px;
             height: 200px;
             background-color: blue;
@@ -29,18 +33,41 @@
 
         .color-transition:hover::after {
             transform: translateY(0);
-        }
-    </style> -->
+        } */
+    </style>
 </head>
 
 <body>
-    <div class="div">1</div>
+    <!-- <div class="div">1</div> -->
 
     <script>
-        const div = document.querySelector('.div');
-        let num = 1;
+        function shuffleArray(array) {
+            const dir = Math.random() > 0.5;
+            const shiftValue = Math.floor(Math.random() * array.length) + 1;
 
-        div.innerText = num;
+            console.log(dir);
+            console.log(shiftValue);
+            // console.log(array);
+
+            if (dir) {
+                array = array.slice().reverse();
+            }
+
+            for (let i = 0; i < shiftValue; i++) {
+                const firstValue = array.shift();
+                array.push(firstValue);
+            }
+
+            return array;
+        }
+
+        let array = ['a', 'b', 'c', 'd'];
+        console.log(array);
+
+        for (i = 0; i < 10; i++) {
+            array = shuffleArray(array);
+            console.log(array);
+        }
     </script>
 </body>
 
