@@ -10,6 +10,8 @@
 .player-rank {
     flex: 9;
     position: relative;
+    text-transform: uppercase;
+    font-size: 16px;
 }
 
 .rank1 {

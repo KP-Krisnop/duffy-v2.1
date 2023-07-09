@@ -62,19 +62,14 @@ function getInput(array) {
     const input = document.querySelector(id);
     array.push(input.value);
   });
-  // console.log(array);
 }
 
 function randomizePlayer(array) {
   const dir = Math.random() > 0.5;
   const shiftValue = Math.floor(Math.random() * 4);
 
-  // console.log(dir);
-  // console.log(shiftValue);
-
   if (dir) {
-    array = array.slice().reverse();
-    // console.log('reversed');
+    array = array.reverse();
   }
 
   for (let i = 0; i < shiftValue; i++) {
@@ -93,6 +88,7 @@ function setInputValue(array) {
   }
 
   currentNames = array;
+  console.log('Current Name Set : ', currentNames);
   localStorage.setItem('playerSet', JSON.stringify(array));
 }
 
