@@ -52,6 +52,8 @@ randomizerBtn.addEventListener('click', () => {
       player.name = currentNames[index + 1];
     });
 
+    placeNames();
+
     randomizedCount++;
     console.log(randomizedCount);
   }
@@ -137,4 +139,14 @@ function unlockInput() {
     const input = document.querySelector(id);
     input.disabled = false;
   });
+}
+
+function placeNames() {
+  const p = [p1, p2, p3, p4];
+  const dR = [dR1, dR2, dR3, dR4];
+
+  for (let i = 0; i < p.length; i++) {
+    p[i].name = currentNames[i];
+    dR[i].name(p[i].name);
+  }
 }

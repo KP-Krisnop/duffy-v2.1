@@ -43,7 +43,7 @@ input::placeholder {
 }
 
 input:disabled {
-    color: black
+    color: black;
 }
 
 .score-box {
