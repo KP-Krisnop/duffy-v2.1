@@ -21,28 +21,28 @@ const dR4 = createDR(4);
 
 let p1 = {
   name: '',
-  score: undefined,
-  bookingStreek: undefined,
-  addedScore: undefined,
+  score: 0,
+  bookingStreek: 0,
+  addedScore: 0,
 };
 
 let p2 = {
   name: '',
-  score: undefined,
-  bookingStreek: undefined,
-  addedScore: undefined,
+  score: 0,
+  bookingStreek: 0,
+  addedScore: 0,
 };
 
 let p3 = {
   name: '',
-  score: undefined,
-  bookingStreek: undefined,
-  addedScore: undefined,
+  score: 0,
+  bookingStreek: 0,
+  addedScore: 0,
 };
 
 let p4 = {
   name: '',
-  score: undefined,
-  bookingStreek: undefined,
-  addedScore: undefined,
+  score: 0,
+  bookingStreek: 0,
+  addedScore: 0,
 };
