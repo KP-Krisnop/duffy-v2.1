@@ -45,15 +45,15 @@ randomizerBtn.addEventListener('click', () => {
       flashClass('randomized');
       // console.log(nameSet);
     }
-    
+
     const players = [p1, p2, p3, p4];
-    
+
     players.forEach((player, index) => {
       player.name = currentNames[index];
     });
-    
+
     // placeNames();
-    game.displayStats()
+    game.displayStats();
 
     randomizedCount++;
     console.log(randomizedCount);
@@ -63,7 +63,7 @@ randomizerBtn.addEventListener('click', () => {
 function getInput(array) {
   ids.forEach((id) => {
     const input = document.querySelector(id);
-    array.push(input.value);
+    array.push(input.value.toLowerCase());
   });
 }
 
