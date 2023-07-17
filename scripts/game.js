@@ -1,4 +1,5 @@
 const continueButton = document.querySelector('.round-container');
+const cardsNumber = document.querySelector('.cards-number');
 
 let goal = {};
 let score = {};
@@ -14,7 +15,9 @@ continueButton.addEventListener('click', () => {
     goalString.some((element) => element === '') ||
     scoreString.some((element) => element === '')
   ) {
-    console.log('unassign value');
+    console.log('missing value');
+  } else if (randomizedCount <= 0) {
+    console.log('no player');
   } else {
     getGSNumInput();
 
@@ -30,6 +33,14 @@ continueButton.addEventListener('click', () => {
         document.querySelector(`.player${i}-${element}`).value = '';
       }
     });
+
+    roundCount--;
+
+    if (roundCount > 4) {
+      cardsNumber.innerText = roundCount - 3;
+    } else {
+      cardsNumber.innerText = 1;
+    }
   }
 
   game.displayStats();

@@ -56,14 +56,14 @@ randomizerBtn.addEventListener('click', () => {
     game.displayStats();
 
     randomizedCount++;
-    console.log(randomizedCount);
+    console.log('Randomized Count : ', randomizedCount);
   }
 });
 
 function getInput(array) {
   ids.forEach((id) => {
     const input = document.querySelector(id);
-    array.push(input.value.toLowerCase());
+    array.push(input.value.toLowerCase().replace(/\s/g, ''));
   });
 }
 

@@ -258,11 +258,16 @@
     flex: 1;
     border-radius: 20px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     transition: all 0.15s;
     position: relative;
     overflow: hidden;
+}
+
+.round-container h1 {
+    font-size: 60px;
+    margin: 10px;
 }
 
 .round-container::after {
@@ -288,16 +293,4 @@
 
 .round-container:active::after {
     background-color: #C24428;
-}
-
-.round-container h1:first-child {
-    font-size: 70px;
-}
-
-.round-container h1 {
-    margin: 0;
-}
-
-.round-container .th {
-    font-size: 30px;
 }
