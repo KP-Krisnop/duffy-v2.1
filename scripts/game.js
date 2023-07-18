@@ -35,6 +35,7 @@ continueButton.addEventListener('click', () => {
     });
 
     roundCount--;
+    console.log('Round played', 16 - roundCount);
 
     if (roundCount > 4) {
       cardsNumber.innerText = roundCount - 3;

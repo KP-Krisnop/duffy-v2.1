@@ -4,70 +4,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;700&display=swap" rel="stylesheet">
     <title>Document</title>
 
     <style>
         html {
             background-color: antiquewhite;
+            display: flex;
+            justify-content: center;
         }
 
-        /* .color-transition {
-            width: 200px;
-            height: 200px;
-            background-color: blue;
-            position: relative;
-            overflow: hidden;
+        body {
+            width: 80vw;
+            font-family: 'Outfit';
+            font-size: 1.5rem;
         }
 
-        .color-transition::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
+        table {
             width: 100%;
-            height: 100%;
-            background-color: red;
-            transform: translateY(100%);
-            transition: transform 0.5s ease;
+            text-align: center;
+            background-color: rgb(236, 216, 190);
+            border-collapse: collapse;
         }
 
-        .color-transition:hover::after {
-            transform: translateY(0);
-        } */
+        th {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        tr:nth-of-type(2n) {
+            background-color: rgb(233, 212, 183);
+        }
     </style>
 </head>
 
 <body>
-    <!-- <div class="div">1</div> -->
+    <button class="button">click</button>
+    <table class="table">
+        <tr>
+            <th>Goal</th>
+            <th>Cards</th>
+            <th>Score</th>
+            <th>Goal</th>
+            <th>Cards</th>
+            <th>Score</th>
+            <th>Goal</th>
+            <th>Cards</th>
+            <th>Score</th>
+            <th>Goal</th>
+            <th>Cards</th>
+            <th>Score</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>6</td>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+            <td>7</td>
+        </tr>
+    </table>
+
 
     <script>
-        function shuffleArray(array) {
-            const dir = Math.random() > 0.5;
-            const shiftValue = Math.floor(Math.random() * array.length) + 1;
+        const table = document.querySelector('.innerTable');
+        const button = document.querySelector('.button');
 
-            console.log(dir);
-            console.log(shiftValue);
-            // console.log(array);
+        button.addEventListener('click', () => {
+            const htmlToInsert = '<tr>\
+              <td>1</td>\
+              <td>1</td>\
+              <td>6</td>\
+              <td>1</td>\
+              <td>2</td>\
+              <td>2</td>\
+              <td>2</td>\
+              <td>1</td>\
+              <td>1</td>\
+              <td>2</td>\
+              <td>2</td>\
+              <td>7</td>\
+            </tr>';
 
-            if (dir) {
-                array = array.slice().reverse();
-            }
-
-            for (let i = 0; i < shiftValue; i++) {
-                const firstValue = array.shift();
-                array.push(firstValue);
-            }
-
-            return array;
-        }
-
-        let array = ['a', 'b', 'c', 'd'];
-        console.log(array);
-
-        for (i = 0; i < 10; i++) {
-            array = shuffleArray(array);
-            console.log(array);
-        }
+            table.insertAdjacentHTML('beforeend', htmlToInsert);
+        })
     </script>
 </body>
 
