@@ -24,14 +24,19 @@
 
         table {
             width: 100%;
+            table-layout: fixed;
             text-align: center;
             background-color: rgb(236, 216, 190);
-            border-collapse: collapse;
+            /* border-collapse: collapse; */
         }
 
         th {
             padding-top: 20px;
             padding-bottom: 20px;
+        }
+
+        td {
+            border-radius: 10px;
         }
 
         tr:nth-of-type(2n) {
@@ -75,26 +80,31 @@
 
 
     <script>
-        const table = document.querySelector('.innerTable');
+        const table = document.querySelector('.table');
         const button = document.querySelector('.button');
 
         button.addEventListener('click', () => {
-            const htmlToInsert = '<tr>\
-              <td>1</td>\
-              <td>1</td>\
-              <td>6</td>\
-              <td>1</td>\
-              <td>2</td>\
-              <td>2</td>\
-              <td>2</td>\
-              <td>1</td>\
-              <td>1</td>\
-              <td>2</td>\
-              <td>2</td>\
-              <td>7</td>\
-            </tr>';
+            // const htmlToInsert = '<tr>\
+            //   <td>1</td>\
+            //   <td>1</td>\
+            //   <td>6</td>\
+            //   <td>1</td>\
+            //   <td>2</td>\
+            //   <td>2</td>\
+            //   <td>2</td>\
+            //   <td>1</td>\
+            //   <td>1</td>\
+            //   <td>2</td>\
+            //   <td>2</td>\
+            //   <td>7</td>\
+            // </tr>';
 
-            table.insertAdjacentHTML('beforeend', htmlToInsert);
+            // table.insertAdjacentHTML('beforeend', htmlToInsert);
+
+            const newRow = table.insertRow();
+            const newCell = newRow.insertCell();
+            newCell.textContent = '1';
+            newCell.textContent = '2';
         })
     </script>
 </body>
