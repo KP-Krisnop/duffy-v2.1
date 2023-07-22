@@ -9,44 +9,6 @@ let numCard = 13;
 
 continueButton.addEventListener('click', () => {
   continueGame();
-
-  // getGSStrInput();
-  // if (!gameState) {
-  //   console.log('game is not started');
-  // } else if (
-  //   goalString.some((element) => element === '') ||
-  //   scoreString.some((element) => element === '')
-  // ) {
-  //   console.log('missing value');
-  // } else if (randomizedCount <= 0) {
-  //   console.log('no player');
-  // } else {
-  //   getGSNumInput();
-  //   scoreCalc(p1, goal.p1, score.p1);
-  //   scoreCalc(p2, goal.p2, score.p2);
-  //   scoreCalc(p3, goal.p3, score.p3);
-  //   scoreCalc(p4, goal.p4, score.p4);
-  //   const properties = ['goal', 'score'];
-  //   properties.forEach((element) => {
-  //     for (let i = 1; i <= 4; i++) {
-  //       document.querySelector(`.player${i}-${element}`).value = '';
-  //     }
-  //   });
-  //   if (roundCount > 4) {
-  //     cardsNumber.innerText = roundCount - 4;
-  //     numCard = roundCount - 3;
-  //   } else {
-  //     cardsNumber.innerText = 1;
-  //     numCard = 1;
-  //   }
-  //   addTable();
-  //   roundCount--;
-  //   console.log('Round played', 16 - roundCount);
-  // }
-  // game.displayStats();
-  // if (roundCount === 0) {
-  //   game.end;
-  // }
 });
 
 function continueGame() {
@@ -96,6 +58,8 @@ function continueGame() {
   if (roundCount === 0) {
     game.end;
   }
+
+  document.querySelector('.player1-goal').focus();
 }
 
 function scoreCalc(object, goal, score) {

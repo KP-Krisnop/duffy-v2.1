@@ -20,7 +20,7 @@ const dR3 = createDR(3);
 const dR4 = createDR(4);
 
 let p1 = {
-  name: '',
+  name: 'Player 1',
   score: 0,
   bookingStreek: 0,
   addedScore: 0,
@@ -29,7 +29,7 @@ let p1 = {
 };
 
 let p2 = {
-  name: '',
+  name: 'Player 2',
   score: 0,
   bookingStreek: 0,
   addedScore: 0,
@@ -38,7 +38,7 @@ let p2 = {
 };
 
 let p3 = {
-  name: '',
+  name: 'Player 3',
   score: 0,
   bookingStreek: 0,
   addedScore: 0,
@@ -47,7 +47,7 @@ let p3 = {
 };
 
 let p4 = {
-  name: '',
+  name: 'Player 4',
   score: 0,
   bookingStreek: 0,
   addedScore: 0,
