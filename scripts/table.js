@@ -1,21 +1,20 @@
 const table = document.querySelector('.table');
-const button = document.querySelector('.button');
+const player1Name = document.querySelector('.p1-table-name');
+const player2Name = document.querySelector('.p2-table-name');
+const player3Name = document.querySelector('.p3-table-name');
+const player4Name = document.querySelector('.p4-table-name');
 
-button.addEventListener('click', () => {
+function addTable() {
   // Create a new row
   const newRow = document.createElement('div');
   newRow.className = 'row';
 
   // Create new elements for the cells and assign values
-  const cells = [
-    { player: 'player-1', values: [3, 4, 5] },
-    { player: 'player-2', values: [6, 7, 8] },
-    { player: 'player-3', values: [9, 10, 11] },
-    { player: 'player-4', values: [12, 13, 14] },
-  ];
+  const cells = setCells();
 
+  // Create new row of number of cards
   const cardNumberDiv = document.createElement('div');
-  cardNumberDiv.textContent = '12';
+  cardNumberDiv.textContent = numCard;
   cardNumberDiv.className = 'cards';
   newRow.appendChild(cardNumberDiv);
 
@@ -33,4 +32,15 @@ button.addEventListener('click', () => {
   });
 
   table.appendChild(newRow);
-});
+}
+
+function setCells() {
+  const cells = [
+    { player: 'player-1', values: [p1.lastGoal, p1.lastAuction, p1.score] },
+    { player: 'player-2', values: [p2.lastGoal, p2.lastAuction, p2.score] },
+    { player: 'player-3', values: [p3.lastGoal, p3.lastAuction, p3.score] },
+    { player: 'player-4', values: [p4.lastGoal, p4.lastAuction, p4.score] },
+  ];
+
+  return cells;
+}

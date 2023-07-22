@@ -45,16 +45,16 @@ randomizerBtn.addEventListener('click', () => {
       flashClass('randomized');
       // console.log(nameSet);
     }
-    
+
     const players = [p1, p2, p3, p4];
-    
+
     players.forEach((player, index) => {
       player.name = currentNames[index];
     });
-    
+
     // placeNames();
     game.displayStats();
-    
+
     console.log('Randomized Count : ', randomizedCount);
   }
 });
@@ -69,16 +69,16 @@ function getInput(array) {
 function randomizePlayer(array) {
   const dir = Math.random() > 0.5;
   const shiftValue = Math.floor(Math.random() * 4);
-  
+
   if (dir) {
     array = array.reverse();
   }
-  
+
   for (let i = 0; i < shiftValue; i++) {
     const firstValue = array.shift();
     array.push(firstValue);
   }
-  
+
   return array;
 }
 
@@ -87,9 +87,10 @@ function setInputValue(array) {
     const name = array[i];
     const output = document.querySelector(ids[i]);
     output.value = name;
-    randomizedCount++;
   }
-  
+
+  randomizedCount++;
+
   currentNames = array;
   console.log('Current Name Set : ', currentNames);
   localStorage.setItem('playerSet', JSON.stringify(array));

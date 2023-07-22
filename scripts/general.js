@@ -1,5 +1,24 @@
 const askMessage = document.querySelector('.ask-game');
 
+const keysPressed = new Set();
+
+document.addEventListener('keydown', (event) => {
+  keysPressed.add(event.key);
+  checkKeyCombination();
+});
+
+document.addEventListener('keyup', (event) => {
+  keysPressed.delete(event.key);
+});
+
+function checkKeyCombination() {
+  if (keysPressed.has('Alt') && keysPressed.has('q')) {
+    console.log('Alt + Q keys pressed together!');
+    continueGame();
+    // Your custom logic for the key combination goes here
+  }
+}
+
 let gameState = false;
 let roundCount = 16;
 
@@ -24,6 +43,8 @@ const game = {
 
   displayStats: () => {
     const dR = [dR1, dR2, dR3, dR4];
+    const pOrder = [p1, p2, p3, p4];
+    const playerNames = [player1Name, player2Name, player3Name, player4Name];
     const displayOrder = [p1, p2, p3, p4];
     const properties = ['name', 'score', 'bookingStreek', 'addedScore'];
     const propPrefix = ['', '', '', '+'];
@@ -50,5 +71,9 @@ const game = {
         dR[i][properties[j]](propPrefix[j] + displayOrder[i][properties[j]]);
       }
     }
+
+    playerNames.forEach((playerName, index) => {
+      playerName.innerText = pOrder[index].name.toUpperCase();
+    });
   },
 };

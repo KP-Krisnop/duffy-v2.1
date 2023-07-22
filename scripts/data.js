@@ -24,6 +24,8 @@ let p1 = {
   score: 0,
   bookingStreek: 0,
   addedScore: 0,
+  lastGoal: 0,
+  lastAuction: 0,
 };
 
 let p2 = {
@@ -31,6 +33,8 @@ let p2 = {
   score: 0,
   bookingStreek: 0,
   addedScore: 0,
+  lastGoal: 0,
+  lastAuction: 0,
 };
 
 let p3 = {
@@ -38,6 +42,8 @@ let p3 = {
   score: 0,
   bookingStreek: 0,
   addedScore: 0,
+  lastGoal: 0,
+  lastAuction: 0,
 };
 
 let p4 = {
@@ -45,4 +51,6 @@ let p4 = {
   score: 0,
   bookingStreek: 0,
   addedScore: 0,
+  lastGoal: 0,
+  lastAuction: 0,
 };
