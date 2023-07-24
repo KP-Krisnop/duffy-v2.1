@@ -16,6 +16,7 @@ function continueGame() {
 
   if (!gameState) {
     console.log('game is not started');
+    alert('Please Start New Game.')
   } else if (
     goalString.some((element) => element === '') ||
     scoreString.some((element) => element === '')
@@ -23,6 +24,7 @@ function continueGame() {
     console.log('missing value');
   } else if (randomizedCount <= 0) {
     console.log('no player');
+    alert('No Player')
   } else {
     getGSNumInput();
 
