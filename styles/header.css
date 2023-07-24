@@ -21,7 +21,7 @@ header {
 .new-game-button {
     font-weight: 300;
     font-size: 18px;
-    background-color: #F5E1B7;
+    background-color: var(--primary-color);
     border: none;
     border-radius: 8px;
     padding-left: 30px;
@@ -31,17 +31,17 @@ header {
 }
 
 .new-game-button:hover {
-    background-color: #cfbf9b;
+    background-color: var(--accent-color);
 }
 
 .new-game-button:active {
-    background-color: #C24428;
+    background-color: var(--secondary-color);
 }
 
 .randomize-button {
     font-weight: 300;
     font-size: 18px;
-    background-color: #B88319;
+    background-color: var(--secondary-color);
     border: none;
     border-radius: 8px;
     padding-left: 40px;
@@ -50,10 +50,10 @@ header {
 }
 
 .randomize-button:hover {
-    background-color: #9c711b;
+    background-color: var(--dark-color);
     transition: all 0.15s;
 }
 
 .randomize-button:active {
-    background-color: #C24428;
+    background-color: var(--accent-color);
 }

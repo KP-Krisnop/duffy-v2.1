@@ -8,7 +8,7 @@
     padding: 50px;
     padding-left: 100px;
     padding-right: 100px;
-    background-color: #F9EED7;
+    background-color: var(--page-bg-color);
 }
 
 .new-game-modal::backdrop {
@@ -23,7 +23,7 @@
 .new-game-modal button {
     height: 50px;
     width: 150px;
-    background-color: #cfbf9b;
+    background-color: var(--tertiary-color);
     border: none;
     border-radius: 10px;
     margin: 10px;
@@ -35,7 +35,7 @@
 .new-game-modal button:first-child {
     height: 50px;
     width: 150px;
-    background-color: #B88319;
+    background-color: var(--secondary-color);
     border: none;
     border-radius: 10px;
     margin: 10px;
@@ -45,9 +45,9 @@
 }
 
 .new-game-modal button:hover {
-    background-color: #C24428;
+    background-color: var(--accent-color);
 }
 
 .new-game-modal button:hover:first-child {
-    background-color: #795610;
+    background-color: var(--dark-color);
 }

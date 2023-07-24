@@ -6,7 +6,7 @@
 }
 
 .name-box {
-    background-color: #B88319;
+    background-color: var(--secondary-color);
     height: 50px;
     display: flex;
     gap: 12px;
@@ -33,7 +33,7 @@ input {
     text-align: center;
     outline: none;
     text-transform: uppercase;
-    caret-color: #DBC9A2;
+    caret-color: var(--tertiary-color);
 }
 
 input::placeholder {
@@ -53,7 +53,7 @@ input:disabled {
 }
 
 .score-box>div {
-    background-color: #F5E1B7;
+    background-color: var(--primary-color);
     flex: 1;
     border-radius: 25px;
     display: flex;
@@ -71,7 +71,7 @@ input:disabled {
 }
 
 .score-box>div div {
-    background-color: #DBC9A2;
+    background-color: var(--tertiary-color);
     width: 8px;
     height: 140px;
     border-radius: 4px;

@@ -1,3 +1,14 @@
+:root {
+    --page-bg-color: #F9EED7;
+    --primary-color: #F5E1B7;
+    --tertiary-color: #DBC9A2;
+    --quaternary-color: #C7B693;
+    --quinary-color: #AFA080;
+    --dark-color: #8C8066;
+    --accent-color: #C24428;
+    --secondary-color: #B88319;
+}
+
 html {
     width: 100vw;
     height: 5000px;
