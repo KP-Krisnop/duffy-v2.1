@@ -43,7 +43,7 @@ section {
 
 .added-score,
 .book-streek {
-    font-size: 1.75rem;
+    font-size: 2rem;
     font-weight: 900;
     background-color: var(--accent-color);
     height: 80px;

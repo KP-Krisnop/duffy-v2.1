@@ -23,21 +23,20 @@
         <button class="continue-button">Continue</button>
 
         <!-- Modal -->
-        <div class="new-game-modal">
+        <dialog class="new-game-modal">
             <h1>New Game?</h1>
             <p>Are these your player?</p>
             <div class="players">
-                <div>player 1</div>
-                <div>player 2</div>
-                <div>player 3</div>
-                <div>player 4</div>
+                <input type="text" class="player-name" placeholder="Player 1">
+                <input type="text" class="player-name" placeholder="Player 2">
+                <input type="text" class="player-name" placeholder="Player 3">
+                <input type="text" class="player-name" placeholder="Player 4">
             </div>
             <div class="button-container">
                 <button class="start-button">Start</button>
                 <button class="cancel-button">Cancel</button>
             </div>
-        </div>
-        <div class="overlay"></div>
+        </dialog>
     </header>
     <section>
         <div class="rank-stats">
@@ -110,6 +109,8 @@
             <div class="p4-table-name">Player 4</div>
         </div>
     </div>
+    <!-- Scripts -->
+    <script src="scripts/modal.js"></script>
 </body>
 
 </html>
