@@ -1,0 +1,96 @@
+section {
+    display: flex;
+    gap: 20px;
+}
+
+.rank-stats {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.rank-container {
+    background-color: var(--primary-color);
+    height: 100px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+}
+
+/* RANK COLORING */
+
+.rank-container:nth-of-type(2) {
+    background-color: var(--tertiary-color);
+}
+
+.rank-container:nth-of-type(3) {
+    background-color: var(--quaternary-color);
+}
+
+.rank-container:nth-of-type(4) {
+    background-color: var(--quinary-color);
+}
+
+/* RANK COLORING */
+
+.rank-container>h1 {
+    margin-left: 40px;
+    margin-right: 60px;
+    width: 80px;
+    text-align: center;
+}
+
+.added-score,
+.book-streek {
+    font-size: 1.75rem;
+    font-weight: 900;
+    background-color: var(--accent-color);
+    height: 80px;
+    width: 80px;
+    margin-right: 12px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.added-score {
+    margin-left: auto;
+    background-color: var(--secondary-color);
+}
+
+/* GAME STATS */
+
+.game-stats {
+    width: 440px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.trump-stat {
+    background-color: var(--dark-color);
+    flex: 1;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.cards-stat {
+    background-color: var(--dark-color);
+    flex: 1;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards-stat h1 {
+    font-size: 5rem;
+}
+
+/* GAME STATS */

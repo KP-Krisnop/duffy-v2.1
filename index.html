@@ -2,13 +2,12 @@
 <html>
 
 <head>
-    <title>Duffy</title>
+    <title>Duffy V2</title>
     <!-- CSS import -->
     <link rel="stylesheet" href="styles/general.css">
     <link rel="stylesheet" href="styles/header.css">
-    <link rel="stylesheet" href="styles/stats.css">
-    <link rel="stylesheet" href="styles/game.css">
-    <link rel="stylesheet" href="styles/modal.css">
+    <link rel="stylesheet" href="styles/section.css">
+    <link rel="stylesheet" href="styles/input.css">
     <link rel="stylesheet" href="styles/table.css">
     <!-- Font import -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,109 +18,72 @@
 <body>
     <header>
         <p class="name">Duffy</p>
-        <div class="header-button">
-            <button class="new-game-button" id="open-new-game-modal">New Game</button>
-            <button class="randomize-button">Randomize Player</button>
-        </div>
-        <dialog class="new-game-modal" id="new-game-modal">
-            <div>
-                <h1 class="ask-game">New Game?</h1>
-            </div>
-            <div>
-                <button class="start-game-button">Start</button>
-                <button id="close-new-game-modal">Cancel</button>
-            </div>
-        </dialog>
+        <button class="new-game-button">New Game</button>
+        <button class="continue-button">Continue</button>
     </header>
-    <h1>Stats</h1>
-    <div class="stats-box">
-        <div class="player-rank">
-            <div class="rank1">
-                <div>
-                    <h2 class="rank1-name">Player 4</h2>
-                </div>
-                <h1 class="rank1-total-score">37</h1>
-                <div class="rank1-booking-streek">1</div>
-                <div class="rank1-added-score">+5</div>
+    <section>
+        <div class="rank-stats">
+            <div class="rank-container">
+                <h1 class="score">40</h1>
+                <p class="name">Player 1</p>
+                <div class="added-score">+1</div>
+                <div class="book-streek">2</div>
             </div>
-            <div class="rank2">
-                <div>
-                    <h2 class="rank2-name">Player 1</h2>
-                </div>
-                <h1 class="rank2-total-score">31</h1>
-                <div class="rank2-booking-streek">2</div>
-                <div class="rank2-added-score">+4</div>
+            <div class="rank-container">
+                <h1 class="-score">30</h1>
+                <p class="name">Player 2</p>
+                <div class="added-score">+1</div>
+                <div class="book-streek">2</div>
             </div>
-            <div class="rank3">
-                <div>
-                    <h2 class="rank3-name">Player 2</h2>
-                </div>
-                <h1 class="rank3-total-score">29</h1>
-                <div class="rank3-booking-streek">3</div>
-                <div class="rank3-added-score">+3</div>
+            <div class="rank-container">
+                <h1 class="score">20</h1>
+                <p class="name">Player 3</p>
+                <div class="added-score">+1</div>
+                <div class="book-streek">2</div>
             </div>
-            <div class="rank4">
-                <div>
-                    <h2 class="rank4-name">Player 3</h2>
-                </div>
-                <h1 class="rank4-total-score">22</h1>
-                <div class="rank4-booking-streek">4</div>
-                <div class="rank4-added-score">+2</div>
+            <div class="rank-container">
+                <h1 class="score">10</h1>
+                <p class="name">Player 4</p>
+                <div class="added-score">+1</div>
+                <div class="book-streek">2</div>
             </div>
         </div>
-        <div class="game-info">
-            <div class="trump-container">
+        <div class="game-stats">
+            <div class="trump-stat">
                 <h1>Trump</h1>
-                <img src="icons/Spade.svg" alt="Spade">
+                <img src="icons/Spade.svg">
             </div>
-            <div class="round-container">
-                <h1><span class="cards-number">13</span></h1>
-                <h1>Cards</h1>
+            <div class="cards-stat">
+                <p class="player-turn">Player 1</p>
+                <h1 class="cards-number">13 Cards</h1>
+            </div>
+        </div>
+    </section>
+    <div class="input">
+        <div class="goal-bar">
+            <p>Goals</p>
+            <div class="line"></div>
+            <div class="goal-input">
+                <input type="text" placeholder="Player 1" class="goals">
+                <input type="text" placeholder="Player 2" class="goals">
+                <input type="text" placeholder="Player 3" class="goals">
+                <input type="text" placeholder="Player 4" class="goals">
+            </div>
+        </div>
+        <div class="result-bar">
+            <p>Results</p>
+            <div class="line"></div>
+            <div class="result-input">
+                <input type="text" placeholder="Player 1" class="results">
+                <input type="text" placeholder="Player 2" class="results">
+                <input type="text" placeholder="Player 3" class="results">
+                <input type="text" placeholder="Player 4" class="results">
             </div>
         </div>
     </div>
-    <h1>Game</h1>
-    <div class="game-box">
-        <div class="name-box">
-            <input id="name-1" type="text" placeholder="ENTER NAME">
-            <input id="name-2" type="text" placeholder="ENTER NAME">
-            <input id="name-3" type="text" placeholder="ENTER NAME">
-            <input id="name-4" type="text" placeholder="ENTER NAME">
-        </div>
-        <div class="score-box">
-            <div>
-                <h1>Goal</h1>
-                <h1>Score</h1>
-                <input type="text" class="player1-goal">
-                <div></div>
-                <input type="text" class="player1-score">
-            </div>
-            <div>
-                <h1>Goal</h1>
-                <h1>Score</h1>
-                <input type="text" class="player2-goal">
-                <div></div>
-                <input type="text" class="player2-score">
-            </div>
-            <div>
-                <h1>Goal</h1>
-                <h1>Score</h1>
-                <input type="text" class="player3-goal">
-                <div></div>
-                <input type="text" class="player3-score">
-            </div>
-            <div>
-                <h1>Goal</h1>
-                <h1>Score</h1>
-                <input type="text" class="player4-goal">
-                <div></div>
-                <input type="text" class="player4-score">
-            </div>
-        </div>
-    </div>
+    <!-- Table -->
     <h1>Table</h1>
     <div class="table">
-        <!-- <p class="date">Date : 12/31/23</p> -->
         <div class="header">
             <div class="card-word">Cards</div>
             <div class="p1-table-name">Player 1</div>
@@ -129,37 +91,7 @@
             <div class="p3-table-name">Player 3</div>
             <div class="p4-table-name">Player 4</div>
         </div>
-        <!-- <div class="row">
-            <div class="cards">13</div>
-            <div class="player-1">
-                <p data-player-1>1</p>
-                <p data-player-1>1</p>
-                <p data-player-1>6</p>
-            </div>
-            <div class="player-2">
-                <p data-player-2>1</p>
-                <p data-player-2>2</p>
-                <p data-player-2>2</p>
-            </div>
-            <div class="player-3">
-                <p data-player-3>2</p>
-                <p data-player-3>1</p>
-                <p data-player-3>1</p>
-            </div>
-            <div class="player-4">
-                <p data-player-4>2</p>
-                <p data-player-4>2</p>
-                <p data-player-4>7</p>
-            </div>
-        </div> -->
     </div>
-
-    <script src="scripts/header.js"></script>
-    <script src="scripts/randomizer.js"></script>
-    <script src="scripts/data.js"></script>
-    <script src="scripts/general.js"></script>
-    <script src="scripts/game.js"></script>
-    <script src="scripts/table.js"></script>
 </body>
 
 </html>
