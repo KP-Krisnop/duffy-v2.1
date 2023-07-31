@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/section.css">
     <link rel="stylesheet" href="styles/input.css">
     <link rel="stylesheet" href="styles/table.css">
+    <link rel="stylesheet" href="styles/modal.css">
     <!-- Font import -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +21,23 @@
         <p class="name">Duffy</p>
         <button class="new-game-button">New Game</button>
         <button class="continue-button">Continue</button>
+
+        <!-- Modal -->
+        <div class="new-game-modal">
+            <h1>New Game?</h1>
+            <p>Are these your player?</p>
+            <div class="players">
+                <div>player 1</div>
+                <div>player 2</div>
+                <div>player 3</div>
+                <div>player 4</div>
+            </div>
+            <div class="button-container">
+                <button class="start-button">Start</button>
+                <button class="cancel-button">Cancel</button>
+            </div>
+        </div>
+        <div class="overlay"></div>
     </header>
     <section>
         <div class="rank-stats">

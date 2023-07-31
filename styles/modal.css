@@ -1,0 +1,57 @@
+.new-game-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 640px;
+    height: 400px;
+    border-radius: 20px;
+    z-index: 100;
+}
+
+.new-game-modal>p {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.players {
+    height: 120px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.players>div {
+    background-color: var(--quinary-color);
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.start-button,
+.cancel-button {
+    background-color: var(--quinary-color);
+    margin: 10px;
+    font-weight: 700;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.5);
+}
