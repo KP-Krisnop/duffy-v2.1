@@ -1,5 +1,4 @@
 let gameState = false;
-localStorage.setItem('gameState', false);
 
 const game = {
   start: () => {
@@ -11,12 +10,12 @@ const game = {
       results[index].placeholder = playerNames[index];
     });
     gameState = true;
-    localStorage.setItem('gameState', true);
     game.displayData();
+    gameButton.innerText = 'End Game';
   },
   end: () => {
     gameState = false;
-    localStorage.setItem('gameState', false);
+    gameButton.innerText = 'New Game';
   },
   displayData: () => {
     let k = 0;
@@ -68,7 +67,7 @@ const game = {
     cardsNumber.innerText = 'Wins';
     winModal.showModal();
     gameState = false;
-    localStorage.setItem('gameState', false);
+    game.end();
   },
 };
 
@@ -90,3 +89,9 @@ function checkKeyCombination() {
     game.continue();
   }
 }
+
+// Reload and close protection
+window.addEventListener('beforeunload', function (event) {
+  event.preventDefault();
+  event.returnValue = ''; // This is required for older browsers
+});

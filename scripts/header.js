@@ -24,7 +24,6 @@ gameButton.addEventListener('click', () => {
 startGameButton.addEventListener('click', () => {
   if (!collectPlayerName()) {
     newGameModal.close();
-    gameButton.innerText = 'End Game';
     game.start();
   }
 });
@@ -43,7 +42,6 @@ continueButton.addEventListener('click', () => {
 
 endGameButton.addEventListener('click', () => {
   endGameModal.close();
-  gameButton.innerText = 'New Game';
   game.end();
 });
 
