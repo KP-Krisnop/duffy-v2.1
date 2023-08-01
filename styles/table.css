@@ -7,29 +7,14 @@
     border-radius: 20px;
 }
 
-.date {
-    margin-left: 22px;
-    font-size: 20px;
-    font-weight: 300;
-}
-
-.row {
+.table-row {
     width: 100%;
     height: auto;
     display: flex;
     border-radius: 20px;
 }
 
-.player-1,
-.player-2,
-.player-3,
-.player-4 {
-    height: auto;
-    margin: 0px 15px 0px 0px;
-    flex: 1;
-}
-
-.cards {
+.cards-data {
     width: 60px;
     height: 60px;
     margin: 0px 15px 0px 15px;
@@ -42,13 +27,12 @@
     align-items: center;
 }
 
-.player-1,
-.player-2,
-.player-3,
-.player-4 {
-    width: 60px;
+.player-data {
+    /* width: 60px; */
+    flex: 1;
     height: 60px;
     margin-bottom: 15px;
+    margin-right: 15px;
     border-radius: 10px;
     border: solid 1px var(--tertiary-color);
     box-sizing: border-box;
@@ -57,7 +41,7 @@
     align-items: center;
 }
 
-.header {
+.table-header {
     width: 100%;
     height: 60px;
     display: flex;
@@ -78,10 +62,7 @@
     font-weight: 300;
 }
 
-.p1-table-name,
-.p2-table-name,
-.p3-table-name,
-.p4-table-name {
+.table-name {
     flex: 1;
     height: 60px;
     margin-bottom: 15px;

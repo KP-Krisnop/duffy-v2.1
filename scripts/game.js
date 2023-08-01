@@ -54,7 +54,7 @@ function addGameData() {
       playerData[i].score,
     ]);
   }
-  gameDataSet.push(gameData);
+  gameDataSet.push([cardNumberGenerator() + 1, gameData]);
 }
 
 function rankComparator() {
@@ -74,4 +74,22 @@ function rankComparator() {
   const sortedIndices = indexedArr.map((item) => item.index);
 
   rankOrder = sortedIndices;
+}
+
+function cardWordGenerator() {
+  if (roundNumber > 4) {
+    return roundNumber - 3 + ' Cards';
+  } else if (roundNumber <= 4) {
+    return '1 Card';
+  } else if (roundNumber === 0) {
+    return 'Wins';
+  }
+}
+
+function cardNumberGenerator() {
+  if (roundNumber > 4) {
+    return roundNumber - 3;
+  } else if (roundNumber <= 4) {
+    return 1;
+  }
 }

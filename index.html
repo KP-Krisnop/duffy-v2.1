@@ -37,6 +37,18 @@
                 <button class="cancel-button">Cancel</button>
             </div>
         </dialog>
+        <dialog class="end-game-modal">
+            <h1>End Game?</h1>
+            <div class="button-container">
+                <button class="end-button">End</button>
+                <button class="cancel-button">Cancel</button>
+            </div>
+        </dialog>
+        <dialog class="win-modal">
+            <p>The winner is</p>
+            <h1 class="winning-player">Player</h1>
+            <button class="cancel-button">OK</button>
+        </dialog>
     </header>
     <section>
         <div class="rank-stats">
@@ -68,7 +80,7 @@
         <div class="game-stats">
             <div class="trump-stat">
                 <h1>Trump</h1>
-                <img src="icons/Spade.svg">
+                <img class="trump-icon" src="icons/spade.svg">
             </div>
             <div class="cards-stat">
                 <p class="player-turn">Player 1</p>
@@ -101,12 +113,12 @@
     <!-- Table -->
     <h1>Table</h1>
     <div class="table">
-        <div class="header">
+        <div class="table-header">
             <div class="card-word">Cards</div>
-            <div class="p1-table-name">Player 1</div>
-            <div class="p2-table-name">Player 2</div>
-            <div class="p3-table-name">Player 3</div>
-            <div class="p4-table-name">Player 4</div>
+            <div class="table-name">Player 1</div>
+            <div class="table-name">Player 2</div>
+            <div class="table-name">Player 3</div>
+            <div class="table-name">Player 4</div>
         </div>
     </div>
     <!-- Scripts -->
@@ -114,6 +126,7 @@
     <script src="scripts/header.js"></script>
     <script src="scripts/data.js"></script>
     <script src="scripts/game.js"></script>
+    <script src="scripts/table.js"></script>
 </body>
 
 </html>

@@ -2,7 +2,8 @@ let gameState = false;
 
 const game = {
   start: () => {
-    shufflePlayer(playerNames);
+    newData();
+    playerNames = shufflePlayer(playerNames);
     playerData.forEach((data, index) => {
       data.name = playerNames[index];
       goals[index].placeholder = playerNames[index];
@@ -10,6 +11,9 @@ const game = {
     });
     gameState = true;
     game.displayData();
+  },
+  end: () => {
+    gameState = false;
   },
   displayData: () => {
     let k = 0;
@@ -20,6 +24,16 @@ const game = {
       }
       k++;
     }
+
+    if (roundNumber !== 0) {
+      playerTurnIndex = 3 - ((roundNumber - 1) % 4);
+    }
+
+    turmpIcon.src = trumpOrder[playerTurnIndex];
+    playerTurn.innerText = playerNames[playerTurnIndex];
+    cardsNumber.innerText = cardWordGenerator();
+
+    makeTable();
   },
   continue: () => {
     if (emptyInput() || !gameState) {
@@ -32,10 +46,22 @@ const game = {
         goals[i].value = '';
         results[i].value = '';
       }
+      roundNumber--;
+
       calcScore();
       rankComparator();
-      game.displayData();
       addGameData();
+      game.displayData();
+      if (roundNumber === 0) {
+        game.win();
+      }
     }
+  },
+  win: () => {
+    winningPlayer.innerText = playerData[rankOrder[0]].name;
+    playerTurn.innerText = playerData[rankOrder[0]].name;
+    cardsNumber.innerText = 'Wins';
+    winModal.showModal();
+    gameState = false;
   },
 };
