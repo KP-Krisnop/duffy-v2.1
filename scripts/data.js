@@ -19,9 +19,9 @@ const trumpOrder = [
   'icons/club.svg',
 ];
 
-let rankOrder = [];
 let roundNumber = 16;
 let currentPlayer = '';
+let rankOrder = [];
 let gameDataSet = [];
 let playerData = [];
 
@@ -30,9 +30,9 @@ newData();
 function newData() {
   console.log('new data');
 
-  rankOrder = [];
   roundNumber = 16;
   currentPlayer = '';
+  rankOrder = [0, 1, 2, 3];
   gameDataSet = [];
   playerData = [
     {

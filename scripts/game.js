@@ -54,7 +54,7 @@ function addGameData() {
       playerData[i].score,
     ]);
   }
-  gameDataSet.push([cardNumberGenerator() + 1, gameData]);
+  gameDataSet.push([cardNumberGenerator(), gameData]);
 }
 
 function rankComparator() {

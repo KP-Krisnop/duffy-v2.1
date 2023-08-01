@@ -28,7 +28,7 @@
     display: flex;
     gap: 20px;
     border-radius: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 
 .players>div {
@@ -48,10 +48,16 @@
     transform: scale(105%);
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
 .start-button,
 .cancel-button {
     background-color: var(--quinary-color);
-    margin: 10px;
 }
 
 .start-button {
@@ -62,8 +68,10 @@
     background-color: var(--accent-color);
 }
 
-.new-game-modal::backdrop {
-    background-color: rgba(0, 0, 0, 0.5);
+.new-game-modal::backdrop,
+.end-game-modal::backdrop,
+.win-modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .end-game-modal[open] {

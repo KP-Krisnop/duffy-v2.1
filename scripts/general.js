@@ -1,4 +1,5 @@
 let gameState = false;
+localStorage.setItem('gameState', false);
 
 const game = {
   start: () => {
@@ -10,10 +11,12 @@ const game = {
       results[index].placeholder = playerNames[index];
     });
     gameState = true;
+    localStorage.setItem('gameState', true);
     game.displayData();
   },
   end: () => {
     gameState = false;
+    localStorage.setItem('gameState', false);
   },
   displayData: () => {
     let k = 0;
@@ -46,16 +49,18 @@ const game = {
         goals[i].value = '';
         results[i].value = '';
       }
-      roundNumber--;
 
       calcScore();
       rankComparator();
       addGameData();
+      roundNumber--;
       game.displayData();
       if (roundNumber === 0) {
         game.win();
       }
     }
+
+    goals[0].focus();
   },
   win: () => {
     winningPlayer.innerText = playerData[rankOrder[0]].name;
@@ -63,5 +68,25 @@ const game = {
     cardsNumber.innerText = 'Wins';
     winModal.showModal();
     gameState = false;
+    localStorage.setItem('gameState', false);
   },
 };
+
+// Shortcut
+
+const keysPressed = new Set();
+
+document.addEventListener('keydown', (event) => {
+  keysPressed.add(event.key);
+  checkKeyCombination();
+});
+
+document.addEventListener('keyup', (event) => {
+  keysPressed.delete(event.key);
+});
+
+function checkKeyCombination() {
+  if (keysPressed.has('Alt') && keysPressed.has('q')) {
+    game.continue();
+  }
+}
