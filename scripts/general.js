@@ -62,11 +62,12 @@ const game = {
     goals[0].focus();
   },
   win: () => {
-    winningPlayer.innerText = playerData[rankOrder[0]].name;
-    playerTurn.innerText = playerData[rankOrder[0]].name;
+    winningPlayer.innerText = winningPlayerWord();
+    playerTurn.innerText = winningPlayerWord();
+
     cardsNumber.innerText = 'Wins';
-    winModal.showModal();
     gameState = false;
+    winModal.showModal();
     game.end();
   },
 };
@@ -90,7 +91,8 @@ function checkKeyCombination() {
   }
 }
 
-// Reload and close protection
+Reload and close protection
+
 window.addEventListener('beforeunload', function (event) {
   event.preventDefault();
   event.returnValue = ''; // This is required for older browsers

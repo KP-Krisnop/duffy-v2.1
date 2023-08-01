@@ -58,12 +58,8 @@ function addGameData() {
 }
 
 function rankComparator() {
-  const scoreSet = [
-    playerData[0].score,
-    playerData[1].score,
-    playerData[2].score,
-    playerData[3].score,
-  ];
+  const scoreSet = playerData.map((player) => player.score);
+
   // Create an array of objects, where each object holds the original value and its index
   const indexedArr = scoreSet.map((value, index) => ({ value, index }));
 
@@ -92,4 +88,27 @@ function cardNumberGenerator() {
   } else if (roundNumber <= 4) {
     return 1;
   }
+}
+
+function winningPlayerWord() {
+  const scoreSet = playerData.map((player) => player.score);
+
+  // Find the maximum value in the array
+  const max = Math.max(...scoreSet);
+
+  // Find indices where the maximum value occurs
+  const winningIndices = [];
+  for (let i = 0; i < scoreSet.length; i++) {
+    if (scoreSet[i] === max) {
+      winningIndices.push(i);
+    }
+  }
+
+  let winningPlayer = [];
+
+  winningIndices.forEach((index) => {
+    winningPlayer.push(playerNames[index]);
+  });
+
+  return winningPlayer.join(' ');
 }
