@@ -112,3 +112,15 @@ function winningPlayerWord() {
 
   return winningPlayer;
 }
+
+function handleBeforeUnload(event) {
+  event.preventDefault();
+  event.returnValue = 'Are you sure you want to leave?';
+}
+
+function flashError(index) {
+  errorMessage[index].setAttribute('id', 'on');
+  setTimeout(() => {
+    errorMessage[index].setAttribute('id', '');
+  }, 2000);
+}

@@ -63,7 +63,8 @@ const game = {
       }
     }
 
-    goals[0].focus();
+    goals[playerTurnIndex].focus();
+    game.constrain();
   },
   win: () => {
     winningPlayer.innerText = winningPlayerWord().join(' ');
@@ -79,6 +80,29 @@ const game = {
     gameState = false;
     winModal.showModal();
     game.end();
+  },
+  constrain: () => {
+    if (gameState) {
+      let currentGoals = [];
+      let playerConstIndex = 0;
+
+      for (let i = 0; i < goals.length; i++) {
+        currentGoals.push(Number(goals[i].value));
+      }
+
+      const sum = currentGoals.reduce((accumulator, currentValue) => {
+        return accumulator + currentValue;
+      }, 0);
+
+      constrainNumber = cardNumberGenerator() - sum;
+
+      if (roundNumber !== 0) {
+        playerConstIndex = 3 - (roundNumber % 4);
+      }
+
+      const constrainWord = `Constrain ${playerNames[playerConstIndex]} : ${constrainNumber}`;
+      constrainName.innerText = constrainWord;
+    }
   },
 };
 
@@ -99,18 +123,4 @@ function checkKeyCombination() {
   if (keysPressed.has('Alt') && keysPressed.has('q')) {
     game.continue();
   }
-}
-
-// Reload and close protection
-
-function handleBeforeUnload(event) {
-  event.preventDefault();
-  event.returnValue = 'Are you sure you want to leave?';
-}
-
-function flashError(index) {
-  errorMessage[index].setAttribute('id', 'on');
-  setTimeout(() => {
-    errorMessage[index].setAttribute('id', '');
-  }, 2000);
 }

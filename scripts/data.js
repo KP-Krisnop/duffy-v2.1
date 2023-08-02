@@ -6,6 +6,7 @@ const rankBookStreek = document.querySelectorAll('.book-streek');
 const playerTurn = document.querySelector('.player-turn');
 const cardsNumber = document.querySelector('.cards-number');
 const turmpIcon = document.querySelector('.trump-icon');
+const constrainName = document.querySelector('.constrainer');
 const goals = document.querySelectorAll('.goals');
 const results = document.querySelectorAll('.results');
 const winMessage = document.querySelector('.win-message');
@@ -21,6 +22,7 @@ const trumpOrder = [
   'icons/club.svg',
 ];
 
+let constrainNumber = 0;
 let roundNumber = 16;
 let currentPlayer = '';
 let rankOrder = [];
@@ -69,3 +71,9 @@ function newData() {
     },
   ];
 }
+
+goals.forEach((goal) => {
+  goal.addEventListener('input', () => {
+    game.constrain();
+  });
+});

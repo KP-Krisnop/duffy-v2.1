@@ -86,13 +86,6 @@ input::placeholder {
     transform: translateY(-4px);
 }
 
-.end-line {
-    background-color: var(--tertiary-color);
-    width: auto;
-    height: 1px;
-    margin-bottom: 20px;
-}
-
 .ending {
     display: flex;
     justify-content: center;

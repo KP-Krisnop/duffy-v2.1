@@ -93,4 +93,6 @@ section {
     font-size: 5rem;
 }
 
-/* GAME STATS */
+.constrainer {
+    font-size: 1.25rem;
+}
