@@ -12,10 +12,11 @@
 
 html {
     width: 100vw;
-    height: 5000px;
+    /* height: 5000px; */
+    height: auto;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    /* align-items: flex-start; */
 }
 
 body {
@@ -77,4 +78,30 @@ input::placeholder {
     font-weight: 300;
     color: var(--quinary-color);
     transform: translateY(-4px);
+}
+
+.end-line {
+    background-color: var(--tertiary-color);
+    width: auto;
+    height: 1px;
+    margin-bottom: 20px;
+}
+
+.ending {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.end-word {
+    font-weight: 300;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.my-logo {
+    width: 24px;
+    height: 24px;
 }

@@ -9,6 +9,7 @@ const turmpIcon = document.querySelector('.trump-icon');
 const goals = document.querySelectorAll('.goals');
 const results = document.querySelectorAll('.results');
 const winMessage = document.querySelector('.win-message');
+const errorMessage = document.querySelectorAll('.error-message');
 
 const properties = ['name', 'score', 'addedScore', 'bookStreek'];
 const rankProperties = [rankNames, rankScore, rankAddedScore, rankBookStreek];

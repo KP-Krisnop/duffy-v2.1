@@ -11,12 +11,12 @@ const game = {
     });
     gameState = true;
     game.displayData();
-    reloadProtection(1);
+    window.addEventListener('beforeunload', handleBeforeUnload);
     gameButton.innerText = 'End Game';
   },
   end: () => {
     gameState = false;
-    reloadProtection(0);
+    window.removeEventListener('beforeunload', handleBeforeUnload);
     gameButton.innerText = 'New Game';
   },
   displayData: () => {
@@ -40,8 +40,11 @@ const game = {
     makeTable();
   },
   continue: () => {
-    if (emptyInput() || !gameState) {
-      // console.log('not ready yet');
+    if (!gameState) {
+      flashError(0);
+      setInterval();
+    } else if (emptyInput()) {
+      flashError(1);
     } else {
       for (let i = 0; i < playerData.length; i++) {
         const data = playerData[i];
@@ -101,16 +104,14 @@ function checkKeyCombination() {
 
 // Reload and close protection
 
-function reloadProtection(state) {
-  if (state) {
-    window.addEventListener('beforeunload', function (event) {
-      event.preventDefault();
-      event.returnValue = '';
-    });
-  } else {
-    window.removeEventListener('beforeunload', function (event) {
-      event.preventDefault();
-      event.returnValue = '';
-    });
-  }
+function handleBeforeUnload(event) {
+  event.preventDefault();
+  event.returnValue = 'Are you sure you want to leave?';
+}
+
+function flashError(index) {
+  errorMessage[index].setAttribute('id', 'on');
+  setTimeout(() => {
+    errorMessage[index].setAttribute('id', '');
+  }, 2000);
 }
