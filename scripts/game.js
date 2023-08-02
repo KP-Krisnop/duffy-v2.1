@@ -110,5 +110,5 @@ function winningPlayerWord() {
     winningPlayer.push(playerNames[index]);
   });
 
-  return winningPlayer.join(' ');
+  return winningPlayer;
 }

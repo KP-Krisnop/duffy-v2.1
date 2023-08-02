@@ -11,10 +11,12 @@ const game = {
     });
     gameState = true;
     game.displayData();
+    reloadProtection(1);
     gameButton.innerText = 'End Game';
   },
   end: () => {
     gameState = false;
+    reloadProtection(0);
     gameButton.innerText = 'New Game';
   },
   displayData: () => {
@@ -39,7 +41,7 @@ const game = {
   },
   continue: () => {
     if (emptyInput() || !gameState) {
-      console.log('not ready yet');
+      // console.log('not ready yet');
     } else {
       for (let i = 0; i < playerData.length; i++) {
         const data = playerData[i];
@@ -62,8 +64,14 @@ const game = {
     goals[0].focus();
   },
   win: () => {
-    winningPlayer.innerText = winningPlayerWord();
-    playerTurn.innerText = winningPlayerWord();
+    winningPlayer.innerText = winningPlayerWord().join(' ');
+    playerTurn.innerText = winningPlayerWord().join(' ');
+
+    if (winningPlayerWord().length > 1) {
+      winMessage.innerText = 'The winner are';
+    } else if (winningPlayerWord().length === 1) {
+      winMessage.innerText = 'The winner is';
+    }
 
     cardsNumber.innerText = 'Wins';
     gameState = false;
@@ -91,9 +99,18 @@ function checkKeyCombination() {
   }
 }
 
-Reload and close protection
+// Reload and close protection
 
-window.addEventListener('beforeunload', function (event) {
-  event.preventDefault();
-  event.returnValue = ''; // This is required for older browsers
-});
+function reloadProtection(state) {
+  if (state) {
+    window.addEventListener('beforeunload', function (event) {
+      event.preventDefault();
+      event.returnValue = '';
+    });
+  } else {
+    window.removeEventListener('beforeunload', function (event) {
+      event.preventDefault();
+      event.returnValue = '';
+    });
+  }
+}

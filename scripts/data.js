@@ -8,6 +8,7 @@ const cardsNumber = document.querySelector('.cards-number');
 const turmpIcon = document.querySelector('.trump-icon');
 const goals = document.querySelectorAll('.goals');
 const results = document.querySelectorAll('.results');
+const winMessage = document.querySelector('.win-message');
 
 const properties = ['name', 'score', 'addedScore', 'bookStreek'];
 const rankProperties = [rankNames, rankScore, rankAddedScore, rankBookStreek];
@@ -28,8 +29,6 @@ let playerData = [];
 newData();
 
 function newData() {
-  console.log('new data');
-
   roundNumber = 16;
   currentPlayer = '';
   rankOrder = [0, 1, 2, 3];

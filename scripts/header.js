@@ -52,8 +52,6 @@ function collectPlayerName() {
     playerNames[index] = name.value;
   });
 
-  console.log(playerNames);
-
   localStorage.setItem('playerNames', JSON.stringify(playerNames));
   return playerNames.some((e) => e === '');
 }
