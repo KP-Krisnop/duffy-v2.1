@@ -42,7 +42,6 @@ const game = {
   continue: () => {
     if (!gameState) {
       flashError(0);
-      setInterval();
     } else if (emptyInput()) {
       flashError(1);
     } else {

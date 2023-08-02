@@ -72,6 +72,12 @@ input {
     width: 100%;
 }
 
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+}
+
 input::placeholder {
     font-family: 'Outfit', sans-serif;
     font-size: 1.25rem;
