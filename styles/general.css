@@ -12,11 +12,9 @@
 
 html {
     width: 100vw;
-    /* height: 5000px; */
     height: auto;
     display: flex;
     justify-content: center;
-    /* align-items: flex-start; */
 }
 
 body {
@@ -84,6 +82,22 @@ input::placeholder {
     font-weight: 300;
     color: var(--quinary-color);
     transform: translateY(-4px);
+}
+
+select {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 900;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
+    transition: all 0.15s;
+}
+
+select:hover {
+    cursor: pointer;
 }
 
 .ending {

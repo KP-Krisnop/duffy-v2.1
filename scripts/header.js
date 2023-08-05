@@ -8,6 +8,7 @@ const endGameModal = document.querySelector('.end-game-modal');
 const endGameButton = document.querySelector('.end-button');
 const winModal = document.querySelector('.win-modal');
 const winningPlayer = document.querySelector('.winning-player');
+const roundSelector = document.querySelector('.round-selector');
 
 let playerNames = [];
 const playerNamesLS = JSON.parse(localStorage.getItem('playerNames'));

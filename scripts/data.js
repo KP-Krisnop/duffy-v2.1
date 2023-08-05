@@ -32,7 +32,7 @@ let playerData = [];
 newData();
 
 function newData() {
-  roundNumber = 16;
+  roundNumber = roundSelector.value;
   currentPlayer = '';
   rankOrder = [0, 1, 2, 3];
   gameDataSet = [];

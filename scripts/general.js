@@ -9,7 +9,9 @@ const game = {
       goals[index].placeholder = playerNames[index];
       results[index].placeholder = playerNames[index];
     });
+
     gameState = true;
+    game.constrain();
     game.displayData();
     window.addEventListener('beforeunload', handleBeforeUnload);
     gameButton.innerText = 'End Game';
@@ -71,7 +73,7 @@ const game = {
     playerTurn.innerText = winningPlayerWord().join(' ');
 
     if (winningPlayerWord().length > 1) {
-      winMessage.innerText = 'The winner are';
+      winMessage.innerText = 'The winners are';
     } else if (winningPlayerWord().length === 1) {
       winMessage.innerText = 'The winner is';
     }
