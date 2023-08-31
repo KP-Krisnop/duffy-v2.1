@@ -46,6 +46,8 @@ const game = {
       flashError(0);
     } else if (emptyInput()) {
       flashError(1);
+    } else if (validator()) {
+      flashError(2);
     } else {
       for (let i = 0; i < playerData.length; i++) {
         const data = playerData[i];
@@ -102,7 +104,7 @@ const game = {
         playerConstIndex = 3 - (roundNumber % 4);
       }
 
-      const constrainWord = `Constrain ${playerNames[playerConstIndex]} : ${constrainNumber}`;
+      const constrainWord = `Unabled ${playerNames[playerConstIndex]} : ${constrainNumber}`;
       constrainName.innerText = constrainWord;
     }
   },

@@ -29,6 +29,24 @@ function emptyInput() {
   return isEmpty;
 }
 
+function validator() {
+  let playerGoalCheck = [];
+  let playerResultCheck = [];
+
+  for (let i = 0; i < 4; i++) {
+    playerGoalCheck.push(Number(goals[i].value));
+    playerResultCheck.push(Number(results[i].value));
+  }
+
+  const intCheck = playerGoalCheck.every((goal) => Number.isInteger(goal));
+  const goalSum =
+    playerGoalCheck.reduce((a, c) => a + c, 0) === cardNumberGenerator();
+  const resultSum =
+    playerResultCheck.reduce((a, c) => a + c, 0) === cardNumberGenerator();
+
+  return !intCheck || goalSum || !resultSum;
+}
+
 function calcScore() {
   playerData.forEach((dataObj) => {
     let addingScore = 0;
